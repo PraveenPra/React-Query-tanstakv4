@@ -15,6 +15,17 @@ app.get('/posts', (req, res) => {
   res.json(dbData.posts);
 });
 
+app.get('/post/:id', (req, res) => {
+    const id = req.params.id;
+    const post = dbData.posts.find((post) => post.id === parseInt(id));
+
+    if (!post) {
+      return res.status(404).json({ message: 'Post not found' });
+    }
+  
+    res.json(post);
+  });
+
 app.post('/posts', (req, res) => {
   const newPost = req.body;
   newPost.id = dbData.posts.length + 1;
