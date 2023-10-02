@@ -37,8 +37,45 @@ app.post('/create-post', (req, res) => {
   res.json(newPost);
 });
 
-// Add similar routes for UPDATE and DELETE operations
-
+app.put('/update-post/:id', (req, res) => {
+    const id = req.params.id; // Retrieve the value of 'id' from the route parameters
+    const updatedPostData = req.body; // Assuming the updated data is sent in the request body
+  
+    // Find the post with the specified 'id'
+    const postIndex = dbData.posts.findIndex((post) => post.id === parseInt(id));
+  
+    if (postIndex === -1) {
+      return res.status(404).json({ message: 'Post not found' });
+    }
+  
+    // Update the post with the new data
+    dbData.posts[postIndex] = { ...dbData.posts[postIndex], ...updatedPostData };
+  
+    // Save the updated data back to db.json (you may need to write this to a file)
+     fs.writeFileSync('./db.json', JSON.stringify(dbData, null, 2));
+  
+    res.json(dbData.posts[postIndex]);
+  });
+  
+  app.delete('/destroy-post/:id', (req, res) => {
+    const id = req.params.id; // Retrieve the value of 'id' from the route parameters
+  
+    // Find the post with the specified 'id'
+    const postIndex = dbData.posts.findIndex((post) => post.id === parseInt(id));
+  
+    if (postIndex === -1) {
+      return res.status(404).json({ message: 'Post not found' });
+    }
+  
+    // Remove the post from the array
+    dbData.posts.splice(postIndex, 1);
+  
+    // Save the updated data back to db.json (you may need to write this to a file)
+     fs.writeFileSync('./db.json', JSON.stringify(dbData, null, 2));
+  
+    res.json({ message: 'Post deleted successfully' });
+  });
+  
 // Start the server
 const port = 8080;
 app.listen(port, () => {

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-const PostForm = ({pageTitle,onSubmit}) => {
+const PostForm = ({pageTitle,onSubmit,initialValue = {}}) => {
   const [post, setPost] = useState({
-    title: '', body: ''
+    title: initialValue?.title || '', body:initialValue?.body || ''
   })
 
   const handleChange = (e) => {
@@ -61,7 +61,9 @@ const PostForm = ({pageTitle,onSubmit}) => {
 
         <button type='submit' style={{
           padding: '8px 16px',
-          margin: '14px 8px'
+          margin: '14px 8px',
+          background:'green',
+          color:'white'
         }}>
           SUBMIT
         </button>
