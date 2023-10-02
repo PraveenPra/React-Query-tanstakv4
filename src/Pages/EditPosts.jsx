@@ -1,8 +1,11 @@
 import React from 'react'
+import PostForm from '../Components/PostForm'
 
 const EditPosts = () => {
   return (
-    <div>EditPosts</div>
+    <div>
+        <PostForm/>
+    </div>
   )
 }
 

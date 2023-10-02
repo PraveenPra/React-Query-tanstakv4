@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import PostLists from './Pages/PostLists'
 import Post from './Pages/Post'
 import EditPosts from './Pages/EditPosts'
+import PageNotFound from './Pages/404NotFound'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
 <Route path='/' element={<PostLists/>}/>
 <Route path='/post/:id' element={<Post/>}/>
 <Route path='/post/:id/edit' element={<EditPosts/>}/>
+<Route path="*" element={<PageNotFound/>} />
           </Routes>
       </div>
     </>
