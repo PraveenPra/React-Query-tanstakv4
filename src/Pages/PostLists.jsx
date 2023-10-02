@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const PostLists = () => {
 const navigate = useNavigate()
-  const { isLoading, isError, data, error } = useQuery({
+  const { isLoading, isError, data:posts, error } = useQuery({
     queryKey: ['posts'],
     queryFn: fetchPosts
   })
@@ -35,7 +35,7 @@ const navigate = useNavigate()
         padding:'2rem',
       }}>
       <h3><u>Posts</u></h3>
-        {data?.posts?.map((post) => (
+        {posts?.map((post) => (
           <div key={post.id} onClick={()=>navigate(`/post/${post.id}`)} style={{
             cursor:'pointer'
           }}>

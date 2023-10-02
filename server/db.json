@@ -4,6 +4,11 @@
             "id":1,
             "title":"Mummy 2",
             "Body":"This is an egyptian movie"
+        },
+        {
+            "id":2,
+            "title":"Iron man",
+            "Body":"This is an scify movie"
         }
     ]
 }

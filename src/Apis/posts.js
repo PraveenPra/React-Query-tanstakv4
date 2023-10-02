@@ -1,4 +1,4 @@
 export async function fetchPosts(){
-    const response = await fetch('http://192.168.192.1:8080/db.json');
+    const response = await fetch('http://localhost:8080/posts');
     return response.json();
 }
