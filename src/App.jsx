@@ -9,8 +9,7 @@ import PageNotFound from './Pages/404NotFound'
 function App() {
 
   return (
-    <>
-      <div>
+      <div >
         <Routes>
 <Route path='/' element={<PostLists/>}/>
 <Route path='/post/:id' element={<Post/>}/>
@@ -18,7 +17,6 @@ function App() {
 <Route path="*" element={<PageNotFound/>} />
           </Routes>
       </div>
-    </>
   )
 }
 
