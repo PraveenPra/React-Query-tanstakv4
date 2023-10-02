@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const PostForm = () => {
+const PostForm = ({pageTitle}) => {
   const [post, setPost] = useState({
     title: '', body: ''
   })
@@ -49,7 +49,7 @@ const PostForm = () => {
       width: '100%',
       padding: '2rem'
     }}>
-      <h2>Edit post</h2>
+      <h2>{pageTitle}</h2>
 
       <form onSubmit={handleSubmit}>
         {renderField('Title')}
