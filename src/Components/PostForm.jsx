@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const PostForm = ({pageTitle}) => {
+const PostForm = ({pageTitle,onSubmit}) => {
   const [post, setPost] = useState({
     title: '', body: ''
   })
@@ -14,8 +14,11 @@ const PostForm = ({pageTitle}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    console.log(post)
+    onSubmit(post)
+    setPost({
+      title:'',body:''
+    })
+   
   }
 
   const renderField = (label) => (

@@ -7,3 +7,14 @@ export async function fetchPost(id){
     const response = await fetch(`http://localhost:8080/post/${id}`);
     return response.json();
 }
+
+export async function createPost(newPost){
+    const response = await fetch(`http://localhost:8080/create-post`,{
+        method:'POST',
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(newPost)
+    });
+    return response.json();
+}

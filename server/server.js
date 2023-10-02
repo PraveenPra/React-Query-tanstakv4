@@ -26,7 +26,7 @@ app.get('/post/:id', (req, res) => {
     res.json(post);
   });
 
-app.post('/posts', (req, res) => {
+app.post('/create-post', (req, res) => {
   const newPost = req.body;
   newPost.id = dbData.posts.length + 1;
   dbData.posts.push(newPost);

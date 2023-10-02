@@ -1,14 +1,24 @@
 {
-    "posts":[
-        {
-            "id":1,
-            "title":"Mummy 2",
-            "body":"This is an egyptian movie"
-        },
-        {
-            "id":2,
-            "title":"Iron man",
-            "body":"This is an scify movie"
-        }
-    ]
+  "posts": [
+    {
+      "id": 1,
+      "title": "Mummy 2",
+      "body": "This is an egyptian movie"
+    },
+    {
+      "id": 2,
+      "title": "Iron man",
+      "body": "This is an scify movie"
+    },
+    {
+      "id": 3,
+      "title": "tim tim",
+      "body": "this is a comical movie"
+    },
+    {
+      "id": 4,
+      "title": "opius",
+      "body": "this is a fantasy movie"
+    }
+  ]
 }
